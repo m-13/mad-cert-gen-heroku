@@ -14,8 +14,13 @@
           %button.navbar-toggler{"aria-controls" => "navbarCollapse", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarCollapse", "data-toggle" => "collapse", :type => "button"}
             %span.navbar-toggler-icon
           #navbarCollapse.collapse.navbar-collapse
-            %ul.navbar-nav.text-md-center.nav-justified.w-100
+            %ul.navbar-nav.text-md-left.nav-justified.w-100
               %li.nav-item.active
                 %h3.text-muted Certificate Generator
+              %li.nav-item
+              - if current_user
+                = link_to "Sign out (#{current_user.name})", signout_path, id: "sign_out", class: 'btn btn-danger'
+              - else
+                = link_to "Sign in with (MAD)Google", "/auth/google_oauth2", id: "sign_in", class: 'btn btn-primary'
       .container
         = yield
