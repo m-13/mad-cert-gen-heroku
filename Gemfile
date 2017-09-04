@@ -51,7 +51,7 @@ group :development do
 end
 
 group :production do
-  gem 'wkhtmltopdf-heroku'
+  gem 'wkhtmltopdf-binary'
   gem 'pg'
 end
 
