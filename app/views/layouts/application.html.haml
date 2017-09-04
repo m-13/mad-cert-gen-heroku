@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title CertGen
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .container
+      .masthead
+
+        %nav.navbar.navbar-expand-md.navbar-light.bg-light.rounded.mb-3
+          %button.navbar-toggler{"aria-controls" => "navbarCollapse", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarCollapse", "data-toggle" => "collapse", :type => "button"}
+            %span.navbar-toggler-icon
+          #navbarCollapse.collapse.navbar-collapse
+            %ul.navbar-nav.text-md-center.nav-justified.w-100
+              %li.nav-item.active
+                %h3.text-muted Certificate Generator
+      .container
+        = yield

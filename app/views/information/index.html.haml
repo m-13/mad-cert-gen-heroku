@@ -1,0 +1,31 @@
+%h4 Volunteer Information
+
+= form_tag('/generate.pdf', method: :post) do
+  .form-group
+    .form-control
+      .row
+        .col-md-4
+          = label_tag(:name, 'Full Name')
+        .col-md-8
+          = text_field_tag(:name,'', placeholder: 'Enter the name')
+    .form-control
+      .row
+        .col-md-4
+          = label_tag(:city, 'City')
+        .col-md-8
+          = text_field_tag(:city,'', placeholder: 'Enter the city name')
+    .form-control
+      .row
+        .col-md-4
+          = label_tag(:primary_role, 'Primary Role')
+        .col-md-8
+          = text_field_tag(:primary_role,'', placeholder: 'Enter the primary role')
+    .form-control
+      .row
+        .col-md-4
+          = label_tag(:additional_role, 'Additional Role')
+        .col-md-8
+          = text_field_tag(:additional_role,'', placeholder: 'Optional additional roles')
+    .form-control
+      .col-md-4
+        = submit_tag('Create Certificate', class: 'btn btn-primary')
